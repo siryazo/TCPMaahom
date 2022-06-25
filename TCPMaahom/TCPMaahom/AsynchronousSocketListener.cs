@@ -35,6 +35,8 @@ namespace TCPMaahom
 
         public static List<string> _log = new List<string>();
 
+        public static Socket listener;
+
         public AsynchronousSocketListener()
         {
         }
@@ -45,7 +47,7 @@ namespace TCPMaahom
             IPEndPoint localEndPoint = new IPEndPoint(ipAddress, Port);
 
             // Create a TCP/IP socket.  
-            var listener = new Socket(ipAddress.AddressFamily,
+            listener = new Socket(ipAddress.AddressFamily,
                 SocketType.Stream, ProtocolType.Tcp);
 
             // Bind the socket to the local endpoint and listen for incoming connections.  

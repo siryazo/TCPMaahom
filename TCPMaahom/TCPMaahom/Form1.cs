@@ -20,11 +20,27 @@ namespace TCPMaahom
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            StartProcess();
+        }
+
+        void StartProcess()
+        {
+            try
+            {
+                StartTask();
+            }
+            catch
+            {
+                StartProcess();
+            }
+        }
+
+        void StartTask()
+        {
             Task.Run(() =>
             {
                 AsynchronousSocketListener.StartListening();
             });
-            
         }
 
         private void timer1_Tick(object sender, EventArgs e)

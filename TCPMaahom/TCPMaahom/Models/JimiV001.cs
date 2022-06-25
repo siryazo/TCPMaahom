@@ -227,7 +227,7 @@ namespace TCPMaahom
                         }
 
                         var itemName = "";
-                        var isDefined = Enum.IsDefined(typeof(ErrorBehavior), DataID);
+                        var isDefined = Enum.IsDefined(typeof(ErrorBehavior), (int)DataID);
 
                         if (isDefined)
                         {
