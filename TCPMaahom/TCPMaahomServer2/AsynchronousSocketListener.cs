@@ -6,10 +6,9 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Linq;
 
-namespace TCPMaahom
+namespace TCPMaahomServer2
 {
     // State object for reading client data asynchronously  
     public class StateObject
@@ -32,8 +31,6 @@ namespace TCPMaahom
         public static int Port = 11005;
 
         static bool debug = true;
-
-        public static List<string> _log = new List<string>();
 
         public static Socket listener;
 
@@ -118,11 +115,7 @@ namespace TCPMaahom
                     if (debug)
                     {
                         var str = BitConverter.ToString(array2).Replace("-", "");
-                        if (_log.Count > 10)
-                        {
-                            _log.Clear();
-                        }
-                        _log.Add(str);
+                        Console.WriteLine(str);
                     }
 
                     var firstByte = state.buffer[0];
@@ -178,7 +171,7 @@ new AsyncCallback(ReadCallback), state);
                 try
                 {
                     var str = BitConverter.ToString(byteData).Replace("-", "");
-                    _log.Add(str);
+                    Console.WriteLine(str);
                 }
                 catch
                 {

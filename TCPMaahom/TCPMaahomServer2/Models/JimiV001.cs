@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TCPMaahom
+namespace TCPMaahomServer2
 {
     class JimiV001
     {

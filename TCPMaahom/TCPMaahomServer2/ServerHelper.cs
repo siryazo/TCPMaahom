@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TCPMaahom
+namespace TCPMaahomServer2
 {
     class ServerHelper
     {
